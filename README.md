@@ -1,6 +1,7 @@
 # Capstone-1
 
-Of course! Here's an explanation of the features in the grocery store program from menu 1 to menu 5:
+In this project, I've developed a mini application for managing grocery stock and purchase transactions. Here's an explanation of the features in the grocery store program from menu 1 to menu 5. With these features, users can view the list of available groceries, add or remove groceries from the list, purchase groceries, and exit the program.
+
 Menu 1: Display Grocery List
 
 Feature: Display the list of available groceries along with their stock and prices.
@@ -25,5 +26,3 @@ Menu 5: Exit program
 
 Feature: Exit the program.
 Implementation: It ends the program after the user selects the exit menu.
-
-With these features, users can view the list of available groceries, add or remove groceries from the list, purchase groceries, and exit the program. This program is designed to assist users in managing grocery stock and purchase transactions.
