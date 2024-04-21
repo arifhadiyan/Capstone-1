@@ -1,6 +1,8 @@
 # Capstone-1
 
-In this project, I've developed a mini application for managing grocery stock and purchase transactions. Here's an explanation of the features in the grocery store program from menu 1 to menu 5. With these features, users can view the list of available groceries, add or remove groceries from the list, purchase groceries, and exit the program.
+In this project, I've developed "Grocery Store Management System", a mini application for managing grocery stock and purchase transactions. This program enables users to handle tasks related to grocery management, such as viewing, adding, and removing items from the inventory, as well as facilitating the purchasing process.
+
+Here's an explanation of the features in the grocery store program from menu 1 to menu 5. With these features, users can view the list of available groceries, add or remove groceries from the list, purchase groceries, and exit the program.
 
 Menu 1: Display Grocery List
 
