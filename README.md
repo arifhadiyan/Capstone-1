@@ -19,12 +19,17 @@ Menu 3: Remove Grocery
 Feature: Allow users to remove existing groceries from the list.
 Implementation: It uses the remove_grocery() function to prompt users to input the name of the grocery they want to remove, and then removes it from the list if it exists.
 
-Menu 4: Buy Grocery
+Menu 4: Update Grocery
+
+Feature: Allow users to update existing groceries from the list.
+Implementation: It uses the update_grocery() function to prompt users to input the name of the grocery they want to update, and then updates the stock and the price.
+
+Menu 5: Buy Grocery
 
 Feature: Allow users to purchase groceries from the list.
 Implementation: It uses the buy_grocery() function to prompt users to input the grocery they want to buy along with the quantity, adds it to the shopping cart, calculates the total payment, and completes the payment process.
 
-Menu 5: Exit program
+Menu 6: Exit program
 
 Feature: Exit the program.
 Implementation: It ends the program after the user selects the exit menu.
