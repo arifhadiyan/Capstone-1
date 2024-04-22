@@ -34,12 +34,15 @@ def add_grocery():
     if grocery_name in grocery_names:
         print('Barang sudah ada dalam daftar.')
     else:
-        stock = int(input('Masukkan stok barang: '))
-        price = int(input('Masukkan harga barang: '))
-        grocery_names.append(grocery_name)
-        grocery_stocks.append(stock)
-        grocery_prices.append(price)
-        print('Barang berhasil ditambahkan.')
+        try:
+            stock = int(input('Masukkan stok barang: '))
+            price = int(input('Masukkan harga barang: '))
+            grocery_names.append(grocery_name)
+            grocery_stocks.append(stock)
+            grocery_prices.append(price)
+            print('Barang berhasil ditambahkan.')
+        except ValueError:
+            print('Masukkan angka yang valid untuk stok dan harga.')
 
 # Function to remove grocery
 def remove_grocery():
@@ -58,11 +61,14 @@ def update_grocery():
     grocery_name = input('Masukkan nama barang yang ingin di-update: ').lower()
     if grocery_name in grocery_names:
         index = grocery_names.index(grocery_name)
-        new_stock = int(input('Masukkan stok baru untuk {}: '.format(grocery_name)))
-        new_price = int(input('Masukkan harga baru untuk {}: '.format(grocery_name)))
-        grocery_stocks[index] = new_stock
-        grocery_prices[index] = new_price
-        print('Barang berhasil di-update.')
+        try:
+            new_stock = int(input('Masukkan stok baru untuk {}: '.format(grocery_name)))
+            new_price = int(input('Masukkan harga baru untuk {}: '.format(grocery_name)))
+            grocery_stocks[index] = new_stock
+            grocery_prices[index] = new_price
+            print('Barang berhasil di-update.')
+        except ValueError:
+            print('Masukkan angka yang valid untuk stok dan harga.')
     else:
         print('Barang tidak ditemukan dalam daftar.')
 
@@ -85,17 +91,20 @@ def buy_grocery():
         display_grocery_list()
         grocery_name = input('Masukkan nama barang yang ingin dibeli: ').lower()
         if grocery_name in grocery_names:
-            quantity = int(input('Masukkan jumlah barang yang ingin dibeli: '))
-            if quantity > grocery_stocks[grocery_names.index(grocery_name)]:
-                print('Stok tidak mencukupi.')
-            else:
-                if grocery_name in shopping_cart:
-                    shopping_cart[grocery_name] += quantity
+            try:
+                quantity = int(input('Masukkan jumlah barang yang ingin dibeli: '))
+                if quantity > grocery_stocks[grocery_names.index(grocery_name)]:
+                    print('Stok tidak mencukupi.')
                 else:
-                    shopping_cart[grocery_name] = quantity
-                grocery_stocks[grocery_names.index(grocery_name)] -= quantity
-                total_payment += quantity * grocery_prices[grocery_names.index(grocery_name)]
-                print('Barang berhasil ditambahkan ke keranjang belanja.')
+                    if grocery_name in shopping_cart:
+                        shopping_cart[grocery_name] += quantity
+                    else:
+                        shopping_cart[grocery_name] = quantity
+                    grocery_stocks[grocery_names.index(grocery_name)] -= quantity
+                    total_payment += quantity * grocery_prices[grocery_names.index(grocery_name)]
+                    print('Barang berhasil ditambahkan ke keranjang belanja.')
+            except ValueError:
+                print('Masukkan angka yang valid untuk jumlah barang.')
         else:
             print('Barang tidak ditemukan dalam daftar.')
 
