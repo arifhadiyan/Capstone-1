@@ -119,11 +119,14 @@ def buy_grocery():
 
     # Payment process
     while True:
-        payment = int(input('Masukkan jumlah uang pembayaran: '))
-        if payment < total_payment:
-            print('Uang Anda kurang. Mohon masukkan jumlah uang yang cukup.')
-        else:
-            break
+        try:
+            payment = int(input('Masukkan jumlah uang pembayaran: '))
+            if payment < total_payment:
+                print('Uang Anda kurang. Mohon masukkan jumlah uang yang cukup.')
+            else:
+                break
+        except ValueError:
+            print('Masukkan angka yang valid.')
     
     change = payment - total_payment
     print('Pembayaran berhasil.')
