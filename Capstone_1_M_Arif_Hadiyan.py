@@ -134,7 +134,7 @@ def buy_grocery():
 def main():
     while True:
         display_menu()
-        choice = input('Pilih menu (1-5): ')
+        choice = input('Pilih menu (1-7): ')
 
         if choice == '1':
             display_grocery_list()
