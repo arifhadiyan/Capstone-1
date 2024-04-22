@@ -14,8 +14,9 @@ def display_menu():
     print('1. Menampilkan daftar barang')
     print('2. Menambah barang')
     print('3. Menghapus barang')
-    print('4. Membeli barang')
-    print('5. Keluar program')
+    print('4. Mengupdate barang')
+    print('5. Membeli barang')
+    print('6. Keluar program')
 
 # Function to display grocery list
 def display_grocery_list():
@@ -48,6 +49,19 @@ def remove_grocery():
         del grocery_stocks[index]
         del grocery_prices[index]
         print('Barang berhasil dihapus.')
+    else:
+        print('Barang tidak ditemukan dalam daftar.')
+
+# Function to update grocery
+def update_grocery():
+    grocery_name = input('Masukkan nama barang yang ingin di-update: ').lower()
+    if grocery_name in grocery_names:
+        index = grocery_names.index(grocery_name)
+        new_stock = int(input('Masukkan stok baru untuk {}: '.format(grocery_name)))
+        new_price = int(input('Masukkan harga baru untuk {}: '.format(grocery_name)))
+        grocery_stocks[index] = new_stock
+        grocery_prices[index] = new_price
+        print('Barang berhasil di-update.')
     else:
         print('Barang tidak ditemukan dalam daftar.')
 
@@ -116,8 +130,10 @@ def main():
         elif choice == '3':
             remove_grocery()
         elif choice == '4':
-            buy_grocery()
+            update_grocery()
         elif choice == '5':
+            buy_grocery()
+        elif choice == '6':
             print('Terima kasih telah menggunakan program ini.')
             break
         else:
