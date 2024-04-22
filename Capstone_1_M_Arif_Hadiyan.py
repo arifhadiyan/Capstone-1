@@ -15,8 +15,9 @@ def display_menu():
     print('2. Menambah barang')
     print('3. Menghapus barang')
     print('4. Mengupdate barang')
-    print('5. Membeli barang')
-    print('6. Keluar program')
+    print('5. Mencari barang')
+    print('6. Membeli barang')
+    print('7. Keluar program')
 
 # Function to display grocery list
 def display_grocery_list():
@@ -64,6 +65,18 @@ def update_grocery():
         print('Barang berhasil di-update.')
     else:
         print('Barang tidak ditemukan dalam daftar.')
+
+# Function to search for a grocery item
+def search_grocery():
+    search_item = input('Masukkan nama barang yang ingin dicari: ').lower()
+    if search_item in grocery_names:
+        index = grocery_names.index(search_item)
+        print('Barang ditemukan:')
+        print('Nama:', grocery_names[index])
+        print('Stok:', grocery_stocks[index])
+        print('Harga:', grocery_prices[index])
+    else:
+        print('Barang tidak ditemukan.')
 
 # Function to buy grocery
 def buy_grocery():
@@ -132,8 +145,10 @@ def main():
         elif choice == '4':
             update_grocery()
         elif choice == '5':
-            buy_grocery()
+            search_grocery()
         elif choice == '6':
+            buy_grocery()
+        elif choice == '7':
             print('Terima kasih telah menggunakan program ini.')
             break
         else:
