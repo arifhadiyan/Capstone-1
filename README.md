@@ -24,7 +24,11 @@ Menu 4: Update Grocery
 Feature: Allow users to update existing groceries from the list.
 Implementation: It uses the update_grocery() function to prompt users to input the name of the grocery they want to update, and then updates the stock and the price.
 
-Menu 5: Buy Grocery
+Menu 5: Search grocery
+Feature: Allow users to search for a specific grocery item by name and display its details (stock and price). 
+Implementation: It uses the search_grocery () function to prompt users to input the name of the grocery they want to search, and then display its stock and price.
+
+Menu 6: Buy Grocery
 
 Feature: Allow users to purchase groceries from the list.
 Implementation: It uses the buy_grocery() function to prompt users to input the grocery they want to buy along with the quantity, adds it to the shopping cart, calculates the total payment, and completes the payment process.
